@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-dark-rgb: 10, 10, 10;
+  --background-mid-light-rgb: 40, 40, 40;
+  --background-end-dark-rgb: 10, 10, 10;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-dark-rgb)),
+    rgb(var(--background-mid-light-rgb)),
+    rgb(var(--background-end-dark-rgb))
+  );
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  text-align: center;
+}
+
+.left-column img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 36px;
+  color: rgb(var(--foreground-rgb));
+  margin-bottom: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.welcome-heading {
+  font-size: 2.5rem;
+  color: rgb(var(--foreground-rgb));
+}
+
+.brand-name {
+  display: block;
+  font-size: 5.6rem;
+  text-align: center;
+  line-height: 1;
+  color: #ff0000;
+  font-family: 'Arial', sans-serif; 
+  letter-spacing: 2px;
+
+}
+
+.description {
+  font-size: 1.2rem;
+  color: rgb(var(--foreground-rgb));
+  margin-bottom: 20px;
+}
