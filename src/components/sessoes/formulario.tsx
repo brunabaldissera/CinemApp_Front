@@ -16,7 +16,7 @@ export default function Formulario(props: FormularioProps) {
   const [filmname, setNome] = useState(props.sessao?.filmname);
   const [data, setData] = useState(props.sessao?.data);
   const [descricao, setDescricao] = useState(props.sessao?.description);
-  const [status, setStatus] = useState(props.sessao?.status);
+  const [status, setStatus] = useState(props.sessao?.status || 'PREVISTO');
   const opcoesStatus = ["PREVISTO", "ABERTO", "ENCERRADO", "CANCELADO"];
 
   return (
