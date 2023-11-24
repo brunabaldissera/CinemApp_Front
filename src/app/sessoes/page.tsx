@@ -76,12 +76,17 @@ export default function Sessoes() {
     return (
         <div className={`
                 flex justify-center items-center h-screen
-                bg-gradient-to-bl from-indigo-900 via-indigo-400 to-indigo-900
+                background: linear-gradient(
+                  to bottom,
+                  rgb(var(--background-start-dark-rgb)),
+                  rgb(var(--background-mid-light-rgb)),
+                  rgb(var(--background-end-dark-rgb))
+                );
         `}>
             <Layout titulo="Cadastro de sessões">
                 {visivel === 'tabela' ? (
                     <> <div className="flex justify-end">
-                        <Botao className="mb-4" cor="bg-gradient-to-r from-green-500 to-green-700"
+                        <Botao className="mb-4" cor="bg-gradient-to-r from-red-500 to-red-700"
                             onClick={() => novaSessao()}>
                             Nova Sessão </Botao>
                     </div>
