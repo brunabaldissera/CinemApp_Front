@@ -22,7 +22,7 @@ export default function Formulario(props: FormularioProps) {
   return (
     <div>
       {id ? (
-        <Entrada texto="id" valor={id} somenteLeitura></Entrada>
+        <Entrada texto="ID" valor={id} somenteLeitura></Entrada>
       ) : (
         false
       )}
