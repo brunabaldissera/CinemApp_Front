@@ -13,6 +13,9 @@ export default function Navbar(props: any) {
         <a href="/sessoes" className="text-lg no-underline hover:text-red-500 mx-2">
           Sessões
         </a>
+        <a href="/users" className="text-lg no-underline hover:text-red-500 mx-2">
+          Usuários
+        </a>
       </div>
     </nav>
   );

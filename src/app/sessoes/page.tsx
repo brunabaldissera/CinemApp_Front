@@ -7,7 +7,6 @@ import Botao from "@/components/sessoes/botao";
 import Formulario from "@/components/sessoes/formulario";
 import { atualizarSessao, cadastrarSessao, excluirSessao, fetchSessoes } from "@/service/sessaoService";
 
-
 export default function Sessoes() {
   const [sessao, setSessao] = useState<Sessao>(Sessao.vazio())
   const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
@@ -23,7 +22,6 @@ export default function Sessoes() {
           console.error("Erro ao buscar sessões:", error);
         }
       }
-
       loadSessoes();
     }
   }, [visivel]);
@@ -48,7 +46,7 @@ export default function Sessoes() {
         } else {
           console.error("sessaoID é null!");
         }
-        setSessoes(prevSessoes => prevSessoes.filter(ev => ev.id !== sessao.id));
+        setSessoes(prevSessoes => prevSessoes.filter(se => se.id !== sessao.id));
       } catch (error) {
         console.error("Erro ao excluir sessão:", error);
       }

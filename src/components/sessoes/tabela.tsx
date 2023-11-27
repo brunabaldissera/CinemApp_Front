@@ -11,7 +11,6 @@ interface TabelaProps {
 export default function Tabela(props: TabelaProps) {
 
   const exibirAcoes = props.sessaoSelecionada || props.sessaoExcluida;
-  const [termoPesquisa, setTermoPesquisa] = useState<string>('');
 
   function renderHeader() {
     return (
