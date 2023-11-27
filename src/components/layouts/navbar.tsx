@@ -16,6 +16,9 @@ export default function Navbar(props: any) {
         <a href="/users" className="text-lg no-underline hover:text-red-500 mx-2">
           Usuários
         </a>
+        <a href="/tickets" className="text-lg no-underline hover:text-red-500 mx-2">
+          Tickets
+        </a>
       </div>
     </nav>
   );

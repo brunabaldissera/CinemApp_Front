@@ -6,6 +6,7 @@ interface TabelaProps {
   sessoes: Sessao[]
   sessaoSelecionada?: (sessao: Sessao) => void
   sessaoExcluida?: (sessao: Sessao) => void
+  verTickets?: (sessaoId: string) => void
 }
 
 export default function Tabela(props: TabelaProps) {
@@ -20,6 +21,7 @@ export default function Tabela(props: TabelaProps) {
         <th className="text-left p-3 bg-gradient-to-r from-red-500 to-red-700 text-white">Data</th>
         <th className="text-left p-3 bg-gradient-to-r from-red-500 to-red-700 text-white">Descrição</th>
         <th className="text-left p-3 bg-gradient-to-r from-red-500 to-red-700 text-white">Status</th>
+        <th className="text-left p-3 bg-gradient-to-r from-red-500 to-red-700 text-white">Tickets</th>
         {exibirAcoes ? <th className="p-3 bg-gradient-to-r from-red-500 to-red-700 text-white">Ações</th> : false}
       </tr>
     )
@@ -35,12 +37,24 @@ export default function Tabela(props: TabelaProps) {
           <td className="text-left p-3">{sessao.data}</td>
           <td className="text-left p-3">{sessao.description}</td>
           <td className="text-left p-3">{sessao.status}</td>
+          <td className="text-left p-3">
+          <button
+            onClick={() => props.verTickets && props.verTickets(String(sessao.id))} 
+            className={`text-blue-500 hover:underline focus:outline-none`}
+          >
+            Ver Tickets
+          </button>
+        </td>
           {exibirAcoes
             ? renderizarAcoes(sessao)
             : false}
         </tr>
       )
     })
+  }
+
+  function verTickets(sessaoId: string) {
+    console.log(`Mostrar tickets da sessão ${sessaoId}`);
   }
 
   function renderizarAcoes(sessao: Sessao) {
