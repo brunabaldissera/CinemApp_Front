@@ -81,7 +81,7 @@ export default function Formulario(props: FormularioProps) {
           onChange={(e) => setInputSessaoId(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
-          <option value="" disabled>
+          <option value="">
             Selecione uma sessão
           </option>
           {sessoes.map((sessao) => (
@@ -100,7 +100,7 @@ export default function Formulario(props: FormularioProps) {
           onChange={(e) => setInputUsuarioId(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
-          <option value="" disabled>
+          <option value="">
             Selecione um usuário
           </option>
           {usuarios.map((user) => (
