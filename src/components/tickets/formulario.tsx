@@ -17,9 +17,6 @@ interface FormularioProps {
 
 export default function Formulario(props: FormularioProps) {
   const id = props.ticket?.id;
-
-  const [sessao_id, setSessaoID] = useState(props.ticket?.sessao_id);
-  const [user_id, setUserID] = useState(props.ticket?.usuario_id);
   const [sessoes, setSessoes] = useState<string[]>([]);
   const [usuarios, setUsuarios] = useState<string[]>([]);
   const [inputSessaoId, setInputSessaoId] = useState(props.ticket?.sessao_id?.toString() || "");
@@ -75,17 +72,14 @@ export default function Formulario(props: FormularioProps) {
       ) : (
         false
       )}
-      <div className="flex flex-col mt-3">
-        <label className="mb-2">
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2">
           ID Sessão
         </label>
         <select
           value={inputSessaoId}
           onChange={(e) => setInputSessaoId(e.target.value)}
-          className={`
-          border border-red-500 rounded-lg
-          focus:outline-none bg-gray-100 px-4 py-2 
-        `}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           <option value="" disabled>
             Selecione uma sessão
@@ -97,17 +91,14 @@ export default function Formulario(props: FormularioProps) {
           ))}
         </select>
       </div>
-      <div className="flex flex-col mt-3">
-        <label className="mb-2">
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2">
           ID Usuário
         </label>
         <select
           value={inputUsuarioId}
           onChange={(e) => setInputUsuarioId(e.target.value)}
-          className={`
-          border border-red-500 rounded-lg
-          focus:outline-none bg-gray-100 px-4 py-2 
-        `}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         >
           <option value="" disabled>
             Selecione um usuário
@@ -158,4 +149,4 @@ export default function Formulario(props: FormularioProps) {
       </div>
     </div>
   );
-}
+} 
